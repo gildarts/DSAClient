@@ -1,0 +1,16 @@
+﻿<Envelope>
+    <Header>
+        <TargetContract></TargetContract>
+        <TargetService>DS.NameService.GetDoorwayURL</TargetService>
+        <SecurityToken Type="Basic">
+            <UserName>anonymous</UserName>
+            <Password></Password>
+        </SecurityToken>
+        <Parameter>
+            <LogID>DSNS-{0}</LogID>
+        </Parameter>
+    </Header>
+    <Body>
+        <Name>{1}</Name>
+    </Body>
+</Envelope>

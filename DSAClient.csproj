@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E93DB752-DD2B-4FED-AF94-892A8EE6B6E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FISCA.DSAClient</RootNamespace>
+    <AssemblyName>FISCA.DSAClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\debug\FISCA.DSAClient.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugN4|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\FISCA%282010%29N4\ischool\bin\Debug\kernel\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\..\FISCA%282010%29N4\ischool\bin\Debug\kernel\FISCA.DSAClient.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>..\ischool\bin\Debug\kernel\FISCA.DSAClient.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicToken.cs" />
+    <Compile Include="BatchManager.cs" />
+    <Compile Include="ErrorReport.cs" />
+    <Compile Include="Exception\DSAServerException.cs" />
+    <Compile Include="Exception\EnvelopeSpecificationException.cs" />
+    <Compile Include="Exception\PassportException.cs" />
+    <Compile Include="NameService\AccessPoint.cs" />
+    <Compile Include="CommonResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="HeaderCollection.cs" />
+    <Compile Include="Exception\DSAProtocolException.cs" />
+    <Compile Include="Exception\DSAMultipleErrorException.cs" />
+    <Compile Include="Exception\DSNameResolveException.cs" />
+    <Compile Include="NameService\NameService.cs" />
+    <Compile Include="HttpUtil\HttpSetup.cs" />
+    <Compile Include="HttpUtil\HttpTrip.cs" />
+    <Compile Include="HttpUtil\HttpTripExecutor.cs" />
+    <Compile Include="HttpUtil\TripCancelledException.cs" />
+    <Compile Include="HttpUtil\HttpManager.cs" />
+    <Compile Include="HttpUtil\RequestSender.cs" />
+    <Compile Include="HttpUtil\ResponseReceiver.cs" />
+    <Compile Include="NameService\NameResolver.cs" />
+    <Compile Include="Envelope.cs" />
+    <Compile Include="PassportToken.cs" />
+    <Compile Include="SecureTunnel.cs" />
+    <Compile Include="Exception\SecureTunnelException.cs" />
+    <Compile Include="SecureTunnelService.cs" />
+    <Compile Include="SecurityToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HttpUtil\RetryRequiredException.cs" />
+    <Compile Include="IXmlable.cs" />
+    <Compile Include="XmlHelper.cs" />
+    <Compile Include="XmlParsing.cs" />
+    <Compile Include="XmlStringHolder.cs" />
+    <Compile Include="SessionToken.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CommonResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dsnsserverlist.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\NameResolveRequest.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
